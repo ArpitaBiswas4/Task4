@@ -166,27 +166,6 @@ class NotesManager {
         }
     }
 
-    // Search notes by category
-    public void searchNotesByCategory(String category) {
-        ArrayList<Note> results = new ArrayList<>();
-
-        for (Note note : notes) {
-            if (note.getCategory().equalsIgnoreCase(category)) {
-                results.add(note);
-            }
-        }
-
-        if (results.isEmpty()) {
-            System.out.println("No notes found in category: " + category);
-        } else {
-            System.out.println("\n--- NOTES IN CATEGORY: " + category.toUpperCase() + " ---");
-            for (Note note : results) {
-                System.out.println(note.getShortInfo());
-            }
-            System.out.println("\nResults: " + results.size());
-        }
-    }
-
     // Update note
     public void updateNote(int id, String newTitle, String newContent, String newCategory) {
         Note note = findNoteById(id);
